@@ -14,6 +14,11 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "displayName": "Klaviyo Tracking",
+   "categories": [
+    "ANALYTICS",
+    "CONVERSIONS",
+    "EXPERIMENTATION"
+  ],
   "brand": {
     "id": "Klaviyo",
     "displayName": "Klaviyo",
