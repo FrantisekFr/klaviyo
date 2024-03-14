@@ -1,5 +1,5 @@
 homepage: "https://klaviyo.com/"
 documentation: "https://github.com/FrantisekFr/klaviyo/blob/main/README.md"
 versions:
-  - sha: d2505a1abefeea30193047ac298c33554a5b2801
+  - sha: 801a54ebdb12f041a0737f183215e11a57aa7d12
     changeNotes: Release of the Klaviyo Tracking Tag.
