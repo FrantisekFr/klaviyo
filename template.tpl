@@ -46,20 +46,17 @@ ___TEMPLATE_PARAMETERS___
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 const injectScript = require('injectScript');
+const encodeUriComponent = require('encodeUriComponent');
 
 function initialiseKlaviyoTracking(){
-    injectScript('https://frantisekfr.github.io/klaviyo/klaviyo_ga_tracking.js');
+  injectScript('https://frantisekfr.github.io/klaviyo/klaviyo_ga_tracking.js',data.gtmOnSuccess,data.gtmOnFailure);
 }
 
 function loadKlaviyoJS(){
-  injectScript('https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=' + data.klaviyoID, initialiseKlaviyoTracking); 
+  injectScript('https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=' + encodeUriComponent(data.klaviyoID), initialiseKlaviyoTracking); 
 }
 
-loadKlaviyoJS();  
-
-// Call data.gtmOnSuccess when the tag is finished.
-data.gtmOnSuccess();
-
+loadKlaviyoJS();
 
 ___WEB_PERMISSIONS___
 
