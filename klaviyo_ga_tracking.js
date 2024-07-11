@@ -57,12 +57,15 @@
         }
     }
     
+    var windowDataLayer = window.dataLayer;
+    var dlPush = windowDataLayer.push;
+
     // Override the push method of the dataLayer array to listen for push events
-    window.dataLayer.push = function() {
+    windowDataLayer.push = function() {
         // Capture the arguments passed to the original push method
         var args = Array.prototype.slice.call(arguments);
         // Call the original push method to ensure the dataLayer still functions as expected
-        Array.prototype.push.apply(window.dataLayer, args);
+        dlPush.apply(window.dataLayer, args);
         // Extract the event object from the arguments
         var event;    
         for (var i = 0; i < args.length; i++) {
